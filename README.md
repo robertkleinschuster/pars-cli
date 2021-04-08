@@ -1,7 +1,7 @@
 # pars-cli
 
-[![Build Status](https://travis-ci.com/pars/pars-cli.svg?branch=master)](https://travis-ci.com/pars/pars-cli)
-[![Coverage Status](https://coveralls.io/repos/github/pars/pars-cli/badge.svg?branch=master)](https://coveralls.io/github/pars/pars-cli?branch=master)
+[![Build Status](https://travis-ci.com/pars-framework/pars-cli.svg?branch=master)](https://travis-ci.com/pars-framework/pars-cli)
+[![Coverage Status](https://coveralls.io/repos/github/pars-framework/pars-cli/badge.svg?branch=master)](https://coveralls.io/github/pars-framework/pars-cli?branch=master)
 
 This library provides …
 
