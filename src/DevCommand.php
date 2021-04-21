@@ -40,9 +40,17 @@ class DevCommand
                 return 0;
             case 'disable':
                 $disable = new Disable($projectDir, $errorStream);
+                $composer = json_decode(file_get_contents($projectDir . '/composer.json'), true);
+                $composerDev = json_decode(file_get_contents($projectDir . '/composer-dev.json'), true);
+                $composerNew = array_diff_key($composer, $composerDev);
+                file_put_contents($projectDir . '/composer.json', json_encode($composerNew, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
                 return $disable();
             case 'enable':
                 $enable = new Enable($projectDir, $errorStream);
+                $composer = json_decode(file_get_contents($projectDir . '/composer.json'), true);
+                $composerDev = json_decode(file_get_contents($projectDir . '/composer-dev.json'), true);
+                $composerNew = array_replace_recursive($composer, $composerDev);
+                file_put_contents($projectDir . '/composer.json', json_encode($composerNew, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
                 return $enable();
             case 'status':
                 $status = new Status($projectDir);
